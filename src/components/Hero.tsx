@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { highlights } from "@/lib/site";
 import { Icon } from "./Icon";
-import { Img, PrimaryCta, WhatsAppButton } from "./ui";
+import { Img, PrimaryCta } from "./ui";
 
 export function AlamedaLogo({ className = "" }: { className?: string }) {
   return (
@@ -85,17 +85,9 @@ export function Hero() {
         <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-5 pb-10 pt-28 md:px-10 md:pb-20">
           <AlamedaLogo className="rise w-36 text-cream md:w-48" />
 
-          <p
-            className="rise eyebrow mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-cream/25 bg-olive-950/30 px-4 py-2 text-[0.66rem] tracking-[0.16em] text-cream/90 backdrop-blur-sm sm:text-[0.72rem] sm:tracking-[0.28em]"
-            style={{ "--d": "120ms" } as React.CSSProperties}
-          >
-            <Icon name="pin" size={14} className="text-lime" />
-            Morada de Laranjeiras · Serra/ES
-          </p>
-
           <h1
             id="hero-title"
-            className="rise display mt-5 max-w-4xl text-[3.1rem] sm:text-6xl md:text-7xl lg:text-[5.75rem]"
+            className="rise display mt-8 max-w-4xl text-[3.1rem] sm:text-6xl md:text-7xl lg:text-[5.75rem]"
             style={{ "--d": "220ms" } as React.CSSProperties}
           >
             Três casas.
@@ -117,18 +109,26 @@ export function Hero() {
             style={{ "--d": "460ms" } as React.CSSProperties}
           >
             <PrimaryCta where="hero" />
-            <WhatsAppButton where="hero" />
           </div>
-          <p
-            className="rise mt-4 flex items-center gap-2 pr-16 text-sm text-cream/75 sm:pr-0"
+          <div
+            className="rise mt-5 flex flex-col gap-2.5 pr-16 text-sm text-cream/75 sm:pr-0 md:flex-row md:items-center md:gap-0"
             style={{ "--d": "560ms" } as React.CSSProperties}
           >
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-lime" aria-hidden="true" />
-            <span>
-              <strong className="font-semibold text-cream">Apenas 3 unidades.</strong> Atendimento e venda direto com a
-              construtora.
-            </span>
-          </p>
+            <p className="flex shrink-0 items-center gap-2">
+              <Icon name="pin" size={16} className="shrink-0 text-lime" />
+              <span>
+                <strong className="font-semibold text-cream">Morada de Laranjeiras</strong> · Serra/ES
+              </span>
+            </p>
+            <span aria-hidden="true" className="mx-5 hidden h-4 w-px bg-cream/25 md:block" />
+            <p className="flex items-center gap-2">
+              <Icon name="levels" size={16} className="shrink-0 text-lime" />
+              <span>
+                <strong className="font-semibold text-cream">Apenas 3 unidades.</strong> Atendimento e venda direto com
+                a construtora.
+              </span>
+            </p>
+          </div>
         </div>
 
         <p className="pointer-events-none absolute bottom-4 right-5 hidden text-[0.68rem] tracking-wide text-cream/50 md:block">
